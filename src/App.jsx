@@ -45,11 +45,16 @@ function App() {
   }
 
   return questions.length > 0 ? (
-    <div className="bg-white dark:bg-violet-400 grid place-items-center w-full h-screen">
+    <div className="bg-white dark:bg-violet-400 grid place-content-center place-items-center w-full h-screen">
       {currentIndex >= questions.length ? (
-          <h1 className='text-3xl text-white font-bold'>
-            Game ended! Your  score is: {score}
+        <>
+          <h1 className='text-2xl text-white font-bold'>
+            Quiz Complete! Your  score is: {score}
           </h1>
+          <p className='text-base text-white italic'>
+            Think you can do better? <a href="/" className='hover:bg-slate-500'>Click here to try again</a> 
+          </p>
+        </>
       ) : ( 
         <Questionaire 
           data={questions[currentIndex]}
